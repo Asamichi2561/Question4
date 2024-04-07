@@ -18,7 +18,7 @@ function roll_item($vip_rank) {
     $MIN_RAND = 1;
     $MAX_RAND = 10000;
     $result = 0;
-    $DIVISOR_CHANCE = 80-100*($vip_rank/$MAX_VIP_RANK); //use to decrease the chance for getting item rarity that greater than vip rank+1
+    $DIVISOR_CHANCE = 101-100*($vip_rank/$MAX_VIP_RANK); //use to decrease the chance for getting item rarity that greater than vip rank+1
     if ($vip_rank+1 > $MAX_ITEM_RARITY) {
         $vip_rank = $MAX_VIP_RANK;
     }
@@ -53,7 +53,7 @@ function roll_item($vip_rank) {
 
     //Now check the result if it is the "LOWER CHANCE" item
     //For the cases that max vip rank < max item rarity, need to set the max vip range to max item rarity
-    $max_remain_range = ($MAX_VIP_RANK <= $MAX_ITEM_RARITY) ? $MAX_VIP_RANK : $MAX_ITEM_RARITY;
+    $max_remain_range = ($MAX_VIP_RANK <= $MAX_ITEM_RARITY) ? $MAX_ITEM_RARITY : $MAX_VIP_RANK;
     //echo "remain: ",$max_remain_range," ";
     for ($i=$vip_rank+1; $i<=$max_remain_range; $i++) {
         $result += 1;

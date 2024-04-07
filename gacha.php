@@ -2,6 +2,7 @@
 <html>
 <body>
 <?php
+//HERE to adjust the max item rarity and max vip rank
 $MAX_ITEM_RARITY = 9;
 $MAX_VIP_RANK = 7;
 ?>
